@@ -108,7 +108,8 @@ footer p {
   animation-delay: -0.3s;
 }
 .lds-ring div:nth-child(3) {
-  animation-delay: -0.15s;
+  anima
+  tion-delay: -0.15s;
 }
 @keyframes lds-ring {
   0% {
@@ -138,4 +139,8 @@ a.custom-card:hover {
 
 .checked {
   color: orange;
+}
+
+.mb-4 {
+  width: 120%;
 }
