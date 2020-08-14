@@ -39,7 +39,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
         .then(function (resultObj) {
             if (resultObj.status === "ok") {
                 productArray = resultObj.data;
+
                 //Muestro las categorías ordenadas
+
                 showProductList(productArray);
             }
         });
