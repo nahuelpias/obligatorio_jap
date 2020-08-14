@@ -6,6 +6,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
+  <meta name="google-signin-client_id" content="14830294507-8903drlpudq8thq15t78a3n9oumfeu4t.apps.googleusercontent.com.apps.googleusercontent.com">
   <title>eMercado - Todo lo que busques está aquí</title>
   <script src="login.js"> </script>
 
@@ -42,6 +43,12 @@
       width: 120%;
       padding-right: 70px;
     }
+
+    .g-signin2{
+      margin-left: 528px;
+      margin-top: 10px;
+    }
+
   </style>
 </head>
 
@@ -67,9 +74,11 @@
     <p class="mt-5 mb-3 text-muted">© 2017-2019</p>
     </form>
   </div>
+  <div class="g-signin2" data-onsuccess="onSignIn" data-width="300" data-height="40"  ></div>
 
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
 </body>
 
 </html>
