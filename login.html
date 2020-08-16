@@ -6,9 +6,8 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
-  <meta name="google-signin-client_id" content="14830294507-8903drlpudq8thq15t78a3n9oumfeu4t.apps.googleusercontent.com.apps.googleusercontent.com">
+  <meta name="google-signin-client_id" content="14830294507-8903drlpudq8thq15t78a3n9oumfeu4t.apps.googleusercontent.com">
   <title>eMercado - Todo lo que busques está aquí</title>
-  <script src="login.js"> </script>
 
   <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
@@ -17,7 +16,7 @@
   <link href="css/styles.css" rel="stylesheet">
   <style>
     html,
-    body {
+    body {  
       height: 90%;
     }
 
@@ -44,11 +43,10 @@
       padding-right: 70px;
     }
 
-    .g-signin2{
+    .g-signin2 {
       margin-left: 528px;
       margin-top: 10px;
     }
-
   </style>
 </head>
 
@@ -60,21 +58,26 @@
     <img class="mb-4" src="img/login.png">
 
     <h1 class="h3 mb-3 font-weight-normal">Inicio de sesión</h1>
+
     <label for="inputEmail" class="sr-only">Email</label>
-    <input type="email" id="inputEmail" class="form-control" placeholder="Email" required="" autofocus="">
+
+    <input type="email" id="inputEmail" class="form-control" placeholder="Email" required autofocus="">
+
     <label for="inputPassword" class="sr-only">Contraseña</label>
-    <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required="">
+
+    <input type="password" id="inputPassword" class="form-control" placeholder="Contraseña" required>
+    
     <div class="checkbox mb-3">
       <label>
-        <input type="checkbox" value="remember-me"> Recuérdame
+        <input type="checkbox" value="remember-me"> Recuérdame>
       </label>
     </div>
-    <button onclick="location.href='index.html'" class="btn btn-lg btn-primary btn-block"
+    <button onclick="return validacion()" class="btn btn-lg btn-primary btn-block"
       type="submit">Ingresar</button>
     <p class="mt-5 mb-3 text-muted">© 2017-2019</p>
     </form>
   </div>
-  <div class="g-signin2" data-onsuccess="onSignIn" data-width="300" data-height="40"  ></div>
+  <div class="g-signin2" data-onsuccess="onSignIn" data-width="300" data-height="40"></div>
 
   <script src="js/init.js"></script>
   <script src="js/login.js"></script>
