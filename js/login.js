@@ -7,6 +7,10 @@ function validacion(){
     let usuario = document.getElementById("inputEmail").value;
     let contraseña = document.getElementById("inputPassword").value
 
+    //Tomando valor para botón con nombre de usuario
+    sessionStorage.setItem("email",usuario);
+
+
     //Declaro la variable con la regular expresion que controla 
     //si se ingreso bien o no un correo valido en el campo email    
     var RegEx= new RegExp(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/);
@@ -38,11 +42,6 @@ function validacion(){
                                                 window.open('index.html');                                               
                                 }
 }
-
-
-
-
-
 
 document.addEventListener("DOMContentLoaded", function(e){
 
