@@ -13,6 +13,7 @@
   <link href="css/font-awesome.min.css" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -23,16 +24,109 @@
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+      <button id="BotonUser" class="btn btn-info"> </button>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 3 (Fecha de entrega: 13/09/2020) y Entrega 4 (Fecha de entrega: 20/09/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+
+  <main role="main">
+    <div class="container mt-5">
+      <div class="text-center p-4">
+        <h2>Descripción del producto</h2>
+        <p class="lead">Encontrarás aquí toda la información de los productos.</p>
+      </div>
+      <h3 id="productName"></h3>
+      <hr class="my-3">
+      <dl>
+        <dt>Descripción</dt>
+        <dd>
+          <p id="productDescription"></p>
+        </dd>
+
+        <dt>Categoría</dt>
+        <dd>
+          <p id="productCategory"></p>
+        </dd>
+
+        <dt>Cantidad de vendidos</dt>
+        <dd>
+          <p id="productCount"></p>
+        </dd>
+
+        <dt>Imágenes ilustrativas</dt>
+        <dd>
+          <div class="row text-center text-lg-left pt-2" id="divProd_info">
+          </div>
+        </dd>
+
+        <dt>
+          <h4>Productos Relacionados</h4>
+          <hr>
+          <a href="#">Ver más</a>
+        </dt>
+        <dd>
+          <div class="row text-center text-lg-left pt-2" id="relatedProducts">
+          </div>
+        </dd>
+        <dt>
+          <h4>Comentarios</h4>
+          <hr>
+        </dt>
+        <dd>
+          <div id="infoComments">
+
+          </div>
+        </dd>
+      </dl>
+      <br>
+
+      <div>
+        <h5><b>Agregar Comentario</b></h5>
+
+        <br>
+        <div id="divComment">
+
+        </div>
+        <p>Puntuación <span class="fa fa-star checked"></span></p>
+
+
+        <form onsubmit="return addComment(this)">
+
+          <select class="btn btn-warning" name="stars" id="stars">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+          </select>
+
+          <br>
+          <br>
+          <div class="input-group mb-3">
+
+            <input id="commentForm" name="commentForm" type="comentario" class="form-control"
+              placeholder="Agrega tu comentario" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+              <button class="btn btn-primary" onclick="return addComment()" type="submit">Comentar</button>
+            </div>
+          </div>
+
+
+
+          <br>
+
+          <br>
+
+
+        </form>
+        <br>
+        <br>
+
+      </div>
+
+
+      <a type="button" class="btn btn-light btn-lg btn-block" href="products.html">Ver productos</a>
     </div>
-  </div>
+  </main>
   <footer class="text-muted">
     <div class="container">
       <p class="float-right">
