@@ -26,10 +26,12 @@ function showImagesGallery(array) {
 //que el documento se encuentra cargado, es decir, se encuentran todos los
 //elementos HTML presentes.
 document.addEventListener("DOMContentLoaded", function (e) {
+
+    //
     getJSONData(PRODUCT_INFO_URL).then(function (resultObj) {
         if (resultObj.status === "ok")
             product = resultObj.data;
-
+//Obtengo datos del json para info detallada de productos y los agrego a html
         let productNameHTML = document.getElementById("productName");
         let productDescriptionHTML = document.getElementById("productDescription");
         let productCountHTML = document.getElementById("productCount");
@@ -45,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 
         ;
-//Obtengo datos del json para info de productos.
+//Obtengo datos del json para productos.
 
         getJSONData(PRODUCTS_URL).then(function (resultObj) {
             if (resultObj.status === "ok") {
@@ -73,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
     });
 })
 
-//Recorro los datos obtenidos en el json (info de productos) y los muestro en html.
+//Recorro los datos obtenidos en el json (info de productos relacionados) y los muestro en html.
 
 function showRelatedProducts(array) {
     htmlContentToAppend = "";
