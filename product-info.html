@@ -23,8 +23,16 @@
       <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
       <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
       <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <button id="BotonUser" class="btn btn-info"> </button>
+      <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" id="BotonUser" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="cart.html">Ver mi carrito</a>
+          <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+          <a class="dropdown-item" href="login.html">Cerrar sesión</a>
+        </div>
+      </div>
     </div>
   </nav>
 
@@ -54,29 +62,59 @@
 
         <dt>Imágenes ilustrativas</dt>
         <dd>
-          <div class="row text-center text-lg-left pt-2" id="divProd_info">
-          </div>
-        </dd>
+          <!--CAROUSEL-->
 
-        <dt>
-          <h4>Productos Relacionados</h4>
-          <hr>
-        </dt>
-        <dd>
-          <div class="row text-center text-lg-left pt-2" id="relatedProducts">
-          </div>
         </dd>
-        <dt>
-          <h4>Comentarios</h4>
-          <hr>
-        </dt>
-        <dd>
-          <div id="infoComments">
+        <div id="carouselExampleControls" class="carousel slide col-6" data-ride="carousel">
+          <div class="carousel-inner">
+            <!--Item active-->
+            <div class="carousel-item active" id="divActive">
 
+            </div>
+
+            <div id="divCarousel">
+              <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
           </div>
-        </dd>
+        </div>
+
+          <br>
+          <dt>
+            <h4>Productos Relacionados</h4>
+            <hr>
+          </dt>
+          <dd>
+            <div class="row text-center text-lg-left pt-2" id="relatedProducts">
+            </div>
+          </dd>
+          <dt>
+            <h4>Comentarios</h4>
+            <hr>
+          </dt>
+          <dd>
+            <div id="infoComments">
+
+            </div>
+          </dd>
       </dl>
       <br>
+
 
       <div>
         <h5><b>Agregar Comentario</b></h5>
@@ -86,8 +124,6 @@
 
         </div>
         <p>Puntuación <span class="fa fa-star checked"></span></p>
-
-
         <form onsubmit="return addComment(this)">
 
           <select class="btn btn-warning" name="stars" id="stars">
@@ -143,6 +179,7 @@
       <div></div>
     </div>
   </div>
+
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/init.js"></script>
