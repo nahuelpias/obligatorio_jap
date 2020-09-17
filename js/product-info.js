@@ -1,26 +1,32 @@
 
-    var product = {};
+var product = {};
 
-//Muestro Galería de imágenes
+//Muestro carousel de imágenes a partir de la posición 2.
+//Imagen de posicion 1 se implementó en linea 24 
 
 function showImagesGallery(array) {
 
     let htmlContentToAppend = "";
 
-    for (let i = 0; i < array.length; i++) {
+    for (let i = 1; i < array.length; i++) {
         let imageSrc = array[i];
 
         htmlContentToAppend += `
-        <div class="col-lg-3 col-md-4 col-6">
-            <div class="d-block mb-4 h-100">
-                <img class="img-fluid img-thumbnail" src="` + imageSrc + `" alt="">
+        <div class="carousel-item">
+              <img src="` + imageSrc + `" class="d-block w-100" alt="...">
             </div>
-        </div>
         `
 
-        document.getElementById("divProd_info").innerHTML = htmlContentToAppend;
+        document.getElementById("divCarousel").innerHTML = htmlContentToAppend;
     }
+
+    //Carousel active
+    
+    let imgActiveHTML = document.getElementById("divActive");
+
+    imgActiveHTML.innerHTML += `<img src="` + array[0] + `" class="d-block w-100" alt="...">`
 }
+
 
 //Función que se ejecuta una vez que se haya lanzado el evento de
 //que el documento se encuentra cargado, es decir, se encuentran todos los
@@ -31,7 +37,9 @@ document.addEventListener("DOMContentLoaded", function (e) {
     getJSONData(PRODUCT_INFO_URL).then(function (resultObj) {
         if (resultObj.status === "ok")
             product = resultObj.data;
-//Obtengo datos del json para info detallada de productos y los agrego a html
+
+        //Obtengo datos del json para info detallada de productos y los agrego a html
+
         let productNameHTML = document.getElementById("productName");
         let productDescriptionHTML = document.getElementById("productDescription");
         let productCountHTML = document.getElementById("productCount");
@@ -47,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
 
 
         ;
-//Obtengo datos del json para productos.
+        //Obtengo datos del json para productos.
 
         getJSONData(PRODUCTS_URL).then(function (resultObj) {
             if (resultObj.status === "ok") {
@@ -58,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         }
         )
 
-//Obtengo datos del json para comentarios product_info.
+        //Obtengo datos del json para comentarios product_info.
 
         getJSONData(PRODUCT_INFO_COMMENTS_URL).then(function (resultObj) {
             if (resultObj.status === "ok") {
@@ -75,7 +83,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
     });
 })
 
-//Recorro los datos obtenidos en el json (info de productos relacionados) y los muestro en html.
+//Recorro los valores de relatedProduct del json product_info, utilizo la funcion en getJsonData de PRODUCTOS
+//para que muestre los productos que esten en la posición obtenida en json de product_info, y los muestro en html.
 
 function showRelatedProducts(array) {
     htmlContentToAppend = "";
