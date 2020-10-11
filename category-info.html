@@ -16,13 +16,40 @@
 </head>
 
 <body>
-  <nav class="site-header sticky-top py-1 bg-dark">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+    
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse text-center" id="navbarTogglerDemo01">
+      <a class="navbar-brand"> <img src="img/logo-ceibal.png" width="40" alt=""></a>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active mr-4">
+          <a class="nav-link" href="index.html">Inicio</a> <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item mr-4">
+          <a class="nav-link" href="categories.html">Categorías</a>
+        </li>
+        <li class="nav-item mr-4">
+          <a class="nav-link" href="products.html">Productos</a>
+        </li>
+        <li class="nav-item mr-4">
+          <a class="nav-link" href="sell.html">Vender</a>
+        </li>
+      </ul>
+      <div class="mr-4 text-center">
+        <a  href="https://web.facebook.com/" target="blank" class="mr-2"><img src="https://www.iconfinder.com/data/icons/capsocial-round/500/facebook-512.png" width="35" alt=""></a>
+        <a  href="https://twitter.com/" target="blank"><img src="https://www.ywp-spain.es/wp-content/uploads/2019/02/icono-twitter.png" width="35" alt=""></a>
+      </div>
+      <div class="dropdown">
+        <button class="btn btn-outline-info dropdown-toggle" type="button" id="BotonUser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        </button>
+        <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="cart.html">Ver mi carrito</a>
+          <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+          <a class="dropdown-item" href="login.html">Cerrar sesión</a>
+        </div>
+      </div>
     </div>
   </nav>
   <main role="main">
@@ -30,8 +57,6 @@
       <div class="text-center p-4">
         <h2>Descripción de la categoría</h2>
         <p class="lead">Encontrarás aquí toda la información de la categoría seleccionada.</p>
-        <p class="small alert-warning py-3"><strong>Nota: </strong>por simplicidad, cualquiera sea la categoría
-          seleccionada previamente, siempre se visualizará la presente: <strong>Autos</strong>.</p>
       </div>
       <h3 id="categoryName"></h3>
       <hr class="my-3">

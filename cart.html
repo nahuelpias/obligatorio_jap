@@ -34,24 +34,178 @@
 </head>
 
 <body>
-  <nav class="site-header sticky-top py-1 bg-dark">
-    <div class="container d-flex flex-column flex-md-row justify-content-between">
-      <a class="py-2 d-none d-md-inline-block" href="index.html">Inicio</a>
-      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
-      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
-      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
-      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
-      <button id="BotonUser" class="btn btn-info"> </button>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top ">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+      aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse text-center" id="navbarTogglerDemo01">
+      <a class="navbar-brand"> <img src="img/logo-ceibal.png" width="40" alt=""></a>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active mr-4">
+          <a class="nav-link" href="index.html">Inicio</a> <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item mr-4">
+          <a class="nav-link" href="categories.html">Categorías</a>
+        </li>
+        <li class="nav-item mr-4">
+          <a class="nav-link" href="products.html">Productos</a>
+        </li>
+        <li class="nav-item mr-4">
+          <a class="nav-link" href="sell.html">Vender</a>
+        </li>
+      </ul>
+      <div class="mr-4 text-center">
+        <a href="https://web.facebook.com/" target="blank" class="mr-2"><img
+            src="https://www.iconfinder.com/data/icons/capsocial-round/500/facebook-512.png" width="35" alt=""></a>
+        <a href="https://twitter.com/" target="blank"><img
+            src="https://www.ywp-spain.es/wp-content/uploads/2019/02/icono-twitter.png" width="35" alt=""></a>
+      </div>
+      <div class="dropdown">
+        <button class="btn btn-outline-info dropdown-toggle" type="button" id="BotonUser" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
+        </button>
+        <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="cart.html">Ver mi carrito</a>
+          <a class="dropdown-item" href="my-profile.html">Mi perfil</a>
+          <a class="dropdown-item" href="login.html">Cerrar sesión</a>
+        </div>
+      </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 5 (Fecha de entrega: 11/10/2020) y Entrega 6 (Fecha de entrega: 25/10/2020).</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
+  <div class="container col-8">
+    <h1 class="display-6 my-4 text-center">Artículos a comprar</h1>
+    <div class="row justify-content-md-center">
+      <table class="table">
+        <thead>
+          <tr>
+            <th></th>
+            <th>Nombre</th>
+            <th>Costo</th>
+            <th>Cantidad</th>
+            <th>Subtotal</th>
+
+          </tr>
+        </thead>
+        <tbody id="articlesTable">
+
+        </tbody>
+      </table>
     </div>
+    <form>
+      <!--Tipo de envío-->
+
+      <hr>
+      <h5 class="mb-4">Tipo de publicación</h5>
+
+      <div class="d-block">
+        <div class="custom-control custom-radio">
+          <input id="envioPremium" name="publicationType" type="radio" class="custom-control-input" checked=""
+            required="">
+          <label class="custom-control-label" for="envioPremium">Premium 2 a 5 días (15%)</label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input id="envioExpress" name="publicationType" type="radio" class="custom-control-input" required="">
+          <label class="custom-control-label" for="envioExpress">Express 5 a 8 días (7%)</label>
+        </div>
+        <div class="custom-control custom-radio">
+          <input id="envioStandard" name="publicationType" type="radio" class="custom-control-input" required="">
+          <label class="custom-control-label" for="envioStandard">Standard 12 a 15 días (5%)</label>
+        </div>
+      </div>
+
+      <h5 class="my-4">Dirección de envío</h5>
+
+      <!--Formulario nombre/direccion-->
+
+      <div class="form-row">
+
+        <div class="form-group col-md-6">
+          <label for="calle">Calle</label>
+          <input type="text" class="form-control" id="calle" placeholder="Escriba su calle">
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="numero">Número</label>
+          <input type="text" class="form-control" id="numeroPuerta" placeholder="Escriba el número de puerta">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label for="esquina">Esquina</label>
+          <input type="text" class="form-control" id="esquina" placeholder="Escriba nombre de esquina">
+        </div>
+      </div>
+
+
+      <hr class="my-4">
+
+      <!--Costos-->
+
+
+      <h5 class="my-4">Costos</h5>
+
+      <ul class="list-group mb-3">
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <div>
+            <h6 class="my-0">Subtotal</h6>
+            <small class="text-muted">Costo unitario del producto por cantidad</small>
+
+          </div>
+          <div id="subtotalSegundo">
+
+          </div>
+
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-condensed">
+          <div>
+            <h6 class="my-0">Costo de envío</h6>
+            <small class="text-muted">Según el tipo de envío</small>
+          </div>
+          <div id="costoEnvio">
+
+          </div>
+        </li>
+        <li class="list-group-item d-flex justify-content-between">
+          <span>Total ($)</span>
+          <div id="totalCostHTML">
+          </div>
+        </li>
+      </ul>
+      <hr class="my-4">
+
+
+      <h5 class="my-4">Forma de pago</h5>
+      
+      <div class="row mb-4">
+        <select name="" id=""> 
+        
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+      </select> <a href=""> Seleccionar</a> 
+      </div>
+      <div class="row justify-content-md-center ">
+        <button type="button" class="btn btn-primary mb-5" data-toggle="modal" data-target=".bd-example-modal-sm">
+          Finalizar
+          Compra</button>
+      </div>
+      <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-sm">
+          <div class="modal-content" id="modalContentHTML">
+
+          </div>
+
+        </div>
+      </div>
   </div>
+  </form>
+
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
@@ -60,6 +214,7 @@
       <div></div>
     </div>
   </div>
+  
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/dropzone.js"></script>
