@@ -1,3 +1,9 @@
+
+body { 
+  background: rgb(218,255,251);
+background: radial-gradient(circle, rgba(218,255,251,1) 0%, rgba(70,70,70,0.3533788515406162) 100%);
+}
+
 .jumbotron, .card-body, .container, .site-header{
     font-family: 'Raleway', serif !important;
 }
@@ -6,18 +12,7 @@
     font-weight: bold;
 }
 
-.jumbotron {
-  height: 50vh;
-  padding: 5em inherit;
-  margin-bottom: 0;
-  background-color: #53C0FB;
-  background: url('../img/cover_back.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: black;
-  font-weight: bold;
-}
+
 
 @media (min-width: 768px) {
   .jumbotron {
@@ -46,12 +41,14 @@
 }
 
 footer {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
 }
 
 footer p {
-  margin-bottom: .25rem;
+  margin-bottom: .25rem
+  
 }
 
 .site-header a {
@@ -108,8 +105,7 @@ footer p {
   animation-delay: -0.3s;
 }
 .lds-ring div:nth-child(3) {
-  anima
-  tion-delay: -0.15s;
+  animation-delay: -0.15s;
 }
 @keyframes lds-ring {
   0% {
@@ -139,4 +135,9 @@ a.custom-card:hover {
 
 .checked {
   color: orange;
+}
+
+.verProductos {
+  background: rgb(255,255,255);
+background: radial-gradient(circle, rgba(255,255,255,0.4542191876750701) 0%, rgba(255,255,255,0) 100%);
 }
