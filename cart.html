@@ -97,20 +97,19 @@
       <!--Tipo de envío-->
 
       <hr>
-      <h5 class="mb-4">Tipo de publicación</h5>
+      <h5 class="mb-4">Método de envío</h5>
 
       <div class="d-block">
         <div class="custom-control custom-radio">
-          <input id="envioPremium" name="publicationType" type="radio" class="custom-control-input" checked=""
-            required="">
+          <input id="envioPremium" name="publicationType" type="radio" class="custom-control-input" checked="">
           <label class="custom-control-label" for="envioPremium">Premium 2 a 5 días (15%)</label>
         </div>
         <div class="custom-control custom-radio">
-          <input id="envioExpress" name="publicationType" type="radio" class="custom-control-input" required="">
+          <input id="envioExpress" name="publicationType" type="radio" class="custom-control-input">
           <label class="custom-control-label" for="envioExpress">Express 5 a 8 días (7%)</label>
         </div>
         <div class="custom-control custom-radio">
-          <input id="envioStandard" name="publicationType" type="radio" class="custom-control-input" required="">
+          <input id="envioStandard" name="publicationType" type="radio" class="custom-control-input">
           <label class="custom-control-label" for="envioStandard">Standard 12 a 15 días (5%)</label>
         </div>
       </div>
@@ -129,7 +128,7 @@
 
       <div class="form-row">
         <div class="form-group col-md-6">
-          <label for="numero">Número</label>
+          <label for="numeroPuerta">Número</label>
           <input type="text" class="form-control" id="numeroPuerta" placeholder="Escriba el número de puerta">
         </div>
       </div>
@@ -139,13 +138,8 @@
           <input type="text" class="form-control" id="esquina" placeholder="Escriba nombre de esquina">
         </div>
       </div>
-
-
       <hr class="my-4">
-
       <!--Costos-->
-
-
       <h5 class="my-4">Costos</h5>
 
       <ul class="list-group mb-3">
@@ -156,9 +150,7 @@
 
           </div>
           <div id="subtotalSegundo">
-
           </div>
-
         </li>
         <li class="list-group-item d-flex justify-content-between lh-condensed">
           <div>
@@ -176,35 +168,132 @@
         </li>
       </ul>
       <hr class="my-4">
-
-
       <h5 class="my-4">Forma de pago</h5>
-      
-      <div class="row mb-4">
-        <select name="" id=""> 
-        
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
-      </select> <a href=""> Seleccionar</a> 
+      <div id="alertaPago"></div>
+      <div id="modalContentHTML">
       </div>
-      <div class="row justify-content-md-center ">
-        <button type="button" class="btn btn-primary mb-5" data-toggle="modal" data-target=".bd-example-modal-sm">
-          Finalizar
-          Compra</button>
-      </div>
-      <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
-        aria-hidden="true">
-        <div class="modal-dialog modal-sm">
-          <div class="modal-content" id="modalContentHTML">
+      <div id="formaDePagoHTML"></div>
+      <button type="button" class="btn btn-primary rounded-pill mt-3 mb-5" data-toggle="modal"
+        data-target="#exampleModal" data-whatever="@mdo">Seleccionar</button>
 
+
+
+
+      <!--MODAL FORMA DE PAGO-->
+
+      <div class="modal fade" id="exampleModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">
+            <div class="modal-body">
+              <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link btn btn-primary active mr-3" id="optionCredito" data-toggle="pill"
+                    href="#pills-home" role="tab" aria-controls="pills-home" onclick="clickPago1()"
+                    aria-selected="true">Tarjeta de crédito/débito</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="btn btn-primary nav-link" id="optionR" data-toggle="pill" href="#pills-profile"
+                    role="tab" aria-controls="pills-profile" onclick="clickPago2()" aria-selected="false">Red de
+                    Cobranzas</button>
+                </li>
+              </ul>
+              <div class="tab-content" id="pills-tabContent">
+                <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="optionCredito">
+                  <div class="card border-0">
+                    <div class="row">
+                      <div class="col-sm-7 border-line pb-3">
+                        <div class="form-group">
+                          <p class="text-muted text-sm mb-0">Nombre y apellido</p> <input type="text" name="name"
+                            placeholder="Nombre y apellido" size="20>
+                          </div>
+                          <div class=" form-group">
+                          <p class="text-muted text-sm mb-0">Número de tarjeta</p>
+                          <div class="row px-3"> <input type="text" name="card-num" placeholder="0000 0000 0000 0000"
+                              size="22" id="cr_no" minlength="19" maxlength="19">
+                            <img class="image ml-2" style="width:10%;height: 0%;" src="img/master.png"> <img
+                              class="image ml-2" style="width:10%;height: 0%;" src="img/visa.png"> <img
+                              class="image ml-2" style="width:10%;height: 0%;" src="img/american-express.png">
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <p class="text-muted text-sm mb-0">Fecha de vencimiento</p> <input type="text" name="exp"
+                            placeholder="MM/YY" size="6" id="exp" minlength="5" maxlength="5">
+                        </div>
+                        <div class="form-group">
+                          <p class="text-muted text-sm mb-0">CVV/CVC</p> <input type="password" name="cvv"
+                            placeholder="000" size="2" minlength="3" maxlength="3">
+                        </div>
+                        <div class="form-group mb-0">
+                          <div class="custom-control custom-checkbox custom-control-inline"> <input id="chk1"
+                              type="checkbox" name="chk" class="custom-control-input" checked> <label for="chk1"
+                              class="custom-control-label text-muted text-sm">guardar mi tarjeta para futuros
+                              pagos</label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-5 text-sm-center justify-content-center pt-4 pb-4"> <small
+                          class="text-sm text-muted">Número de órden</small>
+                        <h5 class="mb-5">12345678</h5> <small class="text-sm text-muted">Monto a pagar</small>
+                        <div class="row px-3 justify-content-center">
+                          <h2 class=""><span class="text-md font-weight-bold mr-2">$</span><span class="text-danger"
+                              id="totalPayCard"></span></h2>
+                        </div>
+                        <div>
+                          <button onclick="clickPago1()" onclick="clickPago2()" type="button"
+                            class="btn btn-primary rounded">Guardar</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="optionR">
+
+                  <div class="card">
+                    <div class="container">
+                      <div class="row align-items-center">
+                        <div class="col-6">
+                          <img src="img/redpagosabitab.png" style="width: 90%;">
+                        </div>
+                        <div class="col-6">
+                          <p> Dirígase a la red de cobranzas de su preferencia y haga el pago presentando su cédula de
+                            identidad.</p>
+                          <p>Una vez hecho el pago recibirá un mail de confirmación.</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-
         </div>
       </div>
+
+      <div id="formaDePagoHTML">
+        <div id="error"></div>
+
+
+      </div>
+      <div class="text-center">
+        <button class="btn btn-primary rounded-pill mb-5" onclick="return validation();" type="submit">pagar</button>
+      </div>
+
+
+
+    </form>
+
+
   </div>
-  </form>
+  <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+      </div>
+    </div>
+  </div>
+  </div>
 
   <div id="spinner-wrapper">
     <div class="lds-ring">
@@ -214,7 +303,7 @@
       <div></div>
     </div>
   </div>
-  
+
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/dropzone.js"></script>
