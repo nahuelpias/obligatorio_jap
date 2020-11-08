@@ -43,16 +43,15 @@ function showProductList() {
 
         if (((minCount == undefined) || (minCount != undefined && parseInt(product.cost) >= minCount)) &&
             ((maxCount == undefined) || (maxCount != undefined && parseInt(product.cost) <= maxCount)) &&
-            ((buscador == undefined) || (buscador != undefined && product.name.toLowerCase().includes(buscador.toLowerCase()))))
-            {
+            ((buscador == undefined) || (buscador != undefined && product.name.toLowerCase().includes(buscador.toLowerCase())))) {
 
             htmlContentToAppend += `
-            <a href="product-info.html" class="list-group-item list-group-item-action">
+            <a href="product-info.html" class="card mb-4 shadow-sm custom-card">
                 <div class="row">
-                    <div class="col-3">
+                    <div class="col-md-4">
                         <img src="` + product.imgSrc + `" alt="` + product.description + `" class="img-thumbnail">
-                    </div>
-                    <div class="col">
+                        </div>
+                      <div class="col">
                         <div class="d-flex w-100 justify-content-between">
                             <h4 class="mb-1">`+ product.name + `</h4>
                             <small class="text-muted">` + product.soldCount + ` artículos</small>
@@ -60,9 +59,7 @@ function showProductList() {
                         <p class="mb-1">` + product.description + `</p>
                         <div>` + "USD" + " " + product.cost + `</div>
                     </div>
-                    
                 </div>
-                
             </a>
             `
         }
@@ -143,13 +140,13 @@ document.addEventListener("DOMContentLoaded", function (e) {
     });
 
     document.getElementById("searchProduct").addEventListener("keyup", function () {
-                                            
-        buscador = document.getElementById("searchProduct").value ;
-    
-        
+
+        buscador = document.getElementById("searchProduct").value;
+
+
         showProductList();
-    
-    }  );
+
+    });
 });
 
 
