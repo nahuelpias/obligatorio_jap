@@ -27,6 +27,19 @@
         font-size: 3.5rem;
       }
     }
+
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      /* display: none; <- Crashes Chrome on hover */
+      -webkit-appearance: none;
+      margin: 0;
+      /* <-- Apparently some margin are still there even though it's hidden */
+    }
+
+    input[type=number] {
+      -moz-appearance: textfield;
+      /* Firefox */
+    }
   </style>
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
@@ -35,8 +48,9 @@
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-    
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01"
+      aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse text-center" id="navbarTogglerDemo01">
@@ -56,11 +70,14 @@
         </li>
       </ul>
       <div class="mr-4 text-center">
-        <a  href="https://web.facebook.com/" target="blank" class="mr-2"><img src="https://www.iconfinder.com/data/icons/capsocial-round/500/facebook-512.png" width="35" alt=""></a>
-        <a  href="https://twitter.com/" target="blank"><img src="https://www.ywp-spain.es/wp-content/uploads/2019/02/icono-twitter.png" width="35" alt=""></a>
+        <a href="https://web.facebook.com/" target="blank" class="mr-2"><img
+            src="https://www.iconfinder.com/data/icons/capsocial-round/500/facebook-512.png" width="35" alt=""></a>
+        <a href="https://twitter.com/" target="blank"><img
+            src="https://www.ywp-spain.es/wp-content/uploads/2019/02/icono-twitter.png" width="35" alt=""></a>
       </div>
       <div class="dropdown">
-        <button class="btn btn-outline-info dropdown-toggle" type="button" id="BotonUser" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <button class="btn btn-outline-info dropdown-toggle" type="button" id="BotonUser" data-toggle="dropdown"
+          aria-haspopup="true" aria-expanded="false">
         </button>
         <div class="dropdown-menu " aria-labelledby="dropdownMenuButton">
           <a class="dropdown-item" href="cart.html">Ver mi carrito</a>
@@ -70,26 +87,81 @@
       </div>
     </div>
   </nav>
-  <div class="container p-5">
-    <div class="alert alert-danger" role="alert" style="position: relative; width:auto; top: 0;">
-      <h4 class="alert-heading">¡A trabajar! :)</h4>
-      <p>Esta sección corresponde a: Entrega 7 (Fecha de entrega: 8/11/202020) -> Punto 1 y 2.</p>
-      <hr>
-      <p class="mb-0">Para saber qué debes hacer, fijate en la actividad en CREA correspondiente a esta entrega.</p>
-    </div>
+  <h2 class="display-4 text-center mt-3">Datos Personales</h2>
+  <div class="container p-4">
+    <form id="formularioUI">
+      
+        <div id="divIMG" class="text-center">
+        </div>
+
+
+
+        
+
+
+      <div class="row justify-content-center mb-2">
+        <div class="col-6">
+          <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-person-fill mb-2" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" />
+          </svg>
+          <input id="userNameLS" type="text" class="form-control" placeholder="Nombre y apellido">
+        </div>
+      </div>
+
+      <div class="row justify-content-center mb-2">
+        <div class="col-6">
+          <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-calendar-date-fill mb-2" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M4 .5a.5.5 0 0 0-1 0V1H2a2 2 0 0 0-2 2v1h16V3a2 2 0 0 0-2-2h-1V.5a.5.5 0 0 0-1 0V1H4V.5zM16 14V5H0v9a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2zm-6.664-1.21c-1.11 0-1.656-.767-1.703-1.407h.683c.043.37.387.82 1.051.82.844 0 1.301-.848 1.305-2.164h-.027c-.153.414-.637.79-1.383.79-.852 0-1.676-.61-1.676-1.77 0-1.137.871-1.809 1.797-1.809 1.172 0 1.953.734 1.953 2.668 0 1.805-.742 2.871-2 2.871zm.066-2.544c.625 0 1.184-.484 1.184-1.18 0-.832-.527-1.23-1.16-1.23-.586 0-1.168.387-1.168 1.21 0 .817.543 1.2 1.144 1.2zm-2.957-2.89v5.332H5.77v-4.61h-.012c-.29.156-.883.52-1.258.777V8.16a12.6 12.6 0 0 1 1.313-.805h.632z" />
+          </svg>
+          <input id="userAgeLS" type="text" class="form-control" placeholder="Edad">
+        </div>
+      </div>
+
+      <div class="row justify-content-center mb-2">
+        <div class="col-6">
+          <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-envelope-fill mb-2" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M.05 3.555A2 2 0 0 1 2 2h12a2 2 0 0 1 1.95 1.555L8 8.414.05 3.555zM0 4.697v7.104l5.803-3.558L0 4.697zM6.761 8.83l-6.57 4.027A2 2 0 0 0 2 14h12a2 2 0 0 0 1.808-1.144l-6.57-4.027L8 9.586l-1.239-.757zm3.436-.586L16 11.801V4.697l-5.803 3.546z" />
+          </svg>
+          <input id="userEmailLS" type="email" class="form-control" placeholder="Email" readonly>
+        </div>
+      </div>
+
+      <div class="row justify-content-center mb-2">
+        <div class="col-6">
+          <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-phone-fill mb-2" fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd"
+              d="M3 2a2 2 0 0 1 2-2h6a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V2zm6 11a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+          </svg>
+          <input id="userNumLS" type="number" class="form-control" placeholder="Teléfono de contacto">
+        </div>
+      </div>
+      <div class="row justify-content-center mb-2">
+        <div class="">
+          <input type="text" class="rounded p-1" id="inputIMG" placeholder="Colocar enlace HTML">
+          <button class="ml-2 rounded"><a href="https://imgbb.com/upload" target="blank">Subir</a></button>
+        </div>
+      </div>
+
+
+
+      <div class="row justify-content-center">
+        <button class="btn btn-primary col-4 my-5" id="btnSaveUser" onclick="return validationUserData()"
+          type="submit">Guardar</button>
+      </div>
+      
+        
+      
+    </form>
   </div>
-  <footer class="text-muted">
-    <div class="container">
-      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
-      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
-    </div>
-  </footer>
-  <div class="alert fade alert-success" role="alert" id="alertResult">
-    <span id="resultSpan"></span>
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-  </div>
+  <div id="mensajeError"></div>
+  <div id="mensajeConfirmacion"></div>
+  <div class="text-center" id="error"></div>
   <div id="spinner-wrapper">
     <div class="lds-ring">
       <div></div>
@@ -103,6 +175,7 @@
   <script src="js/dropzone.js"></script>
   <script src="js/init.js"></script>
   <script src="js/my-profile.js"></script>
+  <script scr="js/login.js"></script>
 </body>
 
 </html>
